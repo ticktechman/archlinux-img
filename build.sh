@@ -32,8 +32,14 @@ all_done() {
   sudo umount ./root
 }
 
+pack() {
+  [[ -d archlinux-img ]] || mkdir archlinux-img
+  mv root.img initrd.img vmlinux ./archlinux-img/
+}
+
 get_archlinux
 prepare_root
 build_root
 all_done
+pack
 ###############################################################################
