@@ -34,7 +34,7 @@ all_done() {
 
 pack() {
   [[ -d archlinux-img ]] || mkdir archlinux-img
-  mv root.img initrd.img vmlinux ./archlinux-img/
+  mv root.img initrd.img vmlinux arch.json ./archlinux-img/
 }
 
 get_archlinux
