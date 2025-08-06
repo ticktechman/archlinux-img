@@ -1,0 +1,11 @@
+{
+  "cpus": 2,
+  "memory": 2048,
+  "kernel": "vmlinux",
+  "initrd": "initrd.img",
+  "storage": ["root.img"],
+  "cmdline": "console=hvc0 console=tty0 root=/dev/vda rw",
+  "shared": ["shared"],
+  "network": true,
+  "uefi": false
+}
