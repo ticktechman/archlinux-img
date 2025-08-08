@@ -22,7 +22,7 @@ prepare_root() {
 }
 
 build_root() {
-  sudo tar zxf ArchLinuxARM-2023.03-aarch64-rootfs.tar.gz -C ./root
+  sudo tar --preserve-permissions --same-owner -zxf ArchLinuxARM-2023.03-aarch64-rootfs.tar.gz -C ./root
   cp ./root/boot/Image ./vmlinux
   sudo cp ./root/boot/initramfs-linux.img ./initrd.img
   sudo chmod a+r initrd.img
@@ -34,6 +34,7 @@ all_done() {
 
 pack() {
   [[ -d archlinux-img ]] || mkdir archlinux-img
+  [[ -d ./archlinux-img/share ]] || mkdir ./archlinux-img/share
   mv root.img initrd.img vmlinux arch.json ./archlinux-img/
 }
 
